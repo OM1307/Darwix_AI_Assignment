@@ -27,16 +27,29 @@ This approach helps bridge the gap between text-based AI communication and emoti
 
 ## Project Architecture
 
-User Input (Text)
-↓
-Emotion Detection Engine
-↓
-Emotion → Voice Parameter Mapping
-↓
-Text-to-Speech Engine
-↓
-Generated Audio Output
-
+    ┌───────────────────────┐
+    │   User Input (Text)   │
+    └───────────┬───────────┘
+                ↓
+    ┌───────────────────────┐
+    │ Emotion Detection     │
+    │ Engine                │
+    └───────────┬───────────┘
+                ↓
+    ┌───────────────────────┐
+    │ Emotion → Voice       │
+    │ Parameter Mapping     │
+    └───────────┬───────────┘
+                ↓
+    ┌───────────────────────┐
+    │ Text-to-Speech Engine │
+    └───────────┬───────────┘
+                ↓
+    ┌───────────────────────┐
+    │ Generated Audio       │
+    │ Output (.mp3)         │
+    └───────────────────────┘
+    
 The application uses a **Flask web server** to process requests and return generated audio.
 
 ---
